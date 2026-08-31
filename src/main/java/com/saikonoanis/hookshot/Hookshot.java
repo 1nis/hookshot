@@ -35,7 +35,7 @@ public class Hookshot implements ModInitializer {
 	public void registerItems(){
 		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id("hookshot_item"));
 		Item.Settings settings = new Item.Settings().registryKey(itemKey);
-		HOOKSHOT_ITEM = new Item(settings);
+		HOOKSHOT_ITEM = new HookshotItem(settings);
 		Registry.register(Registries.ITEM, itemKey, HOOKSHOT_ITEM);
 	}
 
