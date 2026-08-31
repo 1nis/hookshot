@@ -1,9 +1,14 @@
-# hookshot
+# Hookshot
 
-## Setup
+Mod Minecraft (Fabric) créé pour perfectionner mon Java en développant des mods.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+## Ce qu'il fait
+- Un item "Hookshot" qui vise un bloc au premier clic droit
+- Un deuxième clic droit propulse le joueur vers ce point
 
-## License
+## Stack
+- Minecraft 1.21.11 / Fabric
+- Java 21
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Statut
+Projet en cours de développement.
