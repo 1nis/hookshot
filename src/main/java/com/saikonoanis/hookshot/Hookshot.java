@@ -23,7 +23,6 @@ public class Hookshot implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		registerItems();
-
 		LOGGER.info("Hookshot chargé!");
 	}
 
