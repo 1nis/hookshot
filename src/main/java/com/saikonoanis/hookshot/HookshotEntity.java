@@ -15,4 +15,5 @@ public class HookshotEntity extends ProjectileEntity {
     protected void initDataTracker(DataTracker.Builder builder) {
 
     }
+
 }

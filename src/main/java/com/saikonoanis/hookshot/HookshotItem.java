@@ -9,14 +9,13 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.entity.projectile.FishingBobberEntity;
 
 public class HookshotItem extends FishingRodItem {
     double distanceMax = 100;
     float tickDelta = 1.0F;
     boolean includeFluids = false;
     Vec3d pointCible;
-    FishingBobberEntity flotteur;
+    HookshotEntity flotteur;
 
     public HookshotItem(Settings settings) {
         super(settings);
@@ -37,11 +36,9 @@ public class HookshotItem extends FishingRodItem {
                 pointCible = resultat.getPos();
 
                 // Création flotteur grappin (canne à pêche)
-                flotteur = new FishingBobberEntity(user, world, 0, 0);
+                flotteur = new HookshotEntity(Hookshot.HOOKSHOT_ENTITY, world);
                 flotteur.setPosition(pointCible);
                 world.spawnEntity(flotteur);
-                user.fishHook = flotteur;
-
                 user.sendMessage(Text.of("Grappin lancé"), false);
             }
 
@@ -59,8 +56,9 @@ public class HookshotItem extends FishingRodItem {
                 serverPlayer.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(user));
             }
             user.sendMessage(Text.of("Grappin tiré"), false);
+            flotteur.discard();
+            flotteur = null;
             pointCible = null;
-            user.fishHook = null;
             return ActionResult.SUCCESS;
 
         }

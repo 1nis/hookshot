@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"com.saikonoanis.hookshot.Hookshot"
+		],
+		"client": [
+			"com.saikonoanis.hookshot.HookshotClient"
 		]
 	},
 	"mixins": [
